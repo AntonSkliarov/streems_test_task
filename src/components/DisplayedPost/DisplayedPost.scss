@@ -1,0 +1,25 @@
+.displayed-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 50%;
+  margin-bottom: 70px;
+  padding: 20px;
+  border-radius: 10px;
+
+  background-color: #618685;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__iamge {
+    width: 550px;
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    font-size: 18px;
+  }
+}
