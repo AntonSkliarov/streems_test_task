@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { User } from '../User';
 import './UsersList.scss';
 
 export function UsersList({ users }) {
+  const [userDetailsId, setUserDetailsId] = useState(0);
+
   return (
-    <ul className="usersList">
+    <ul className="users-list">
       {users.map(user => (
-        <User user={user} key={user.id} />
+        <User
+          user={user}
+          key={user.id}
+          userDetailsId={userDetailsId}
+          setUserDetailsId={setUserDetailsId}
+        />
       ))}
     </ul>
   );

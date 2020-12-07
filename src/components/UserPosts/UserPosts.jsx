@@ -20,7 +20,7 @@ export function UserPosts({ userId }) {
     <div className="userPosts">
       <ul>
         {userPosts.map(post => (
-          <Post post={post} />
+          <Post post={post} key={post.id} />
         ))}
       </ul>
     </div>

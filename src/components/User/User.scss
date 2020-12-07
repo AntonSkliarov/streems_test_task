@@ -1,18 +1,35 @@
-.userCard {
+.user {
   display: flex;
 
-  // width: 400px;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
   background-color: chocolate;
-}
 
-.userItem {
-  display: flex;
-}
+  &__details-button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
 
-.userAvatar {
-  margin-bottom: 10px;
-  border-radius: 10px;
+    &:hover {
+      transform: scale(1.1)
+    }
+  }
+
+  &__preview-avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__avatar {
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
 }
