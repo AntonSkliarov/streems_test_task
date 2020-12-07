@@ -60,7 +60,7 @@ export function User({ user, userDetailsId, setUserDetailsId }) {
                 </div>
 
                 <UserPosts
-                  userId={Number(user.id)}
+                  userId={user.id}
                   setDisplayedPost={setDisplayedPost}
                   postId={displayedPost.id}
                 />

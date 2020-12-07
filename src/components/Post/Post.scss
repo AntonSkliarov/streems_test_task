@@ -3,7 +3,9 @@
   justify-content: space-between;
 
   &__content {
+    display: inline-block;
     align-self: center;
+    max-width: 500px;
 
     margin-right: 50px;
 
@@ -11,7 +13,12 @@
   }
 
   &__show-details-button {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+
     margin-bottom: 10px;
+    margin-right: 10px;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -25,6 +32,23 @@
 
     &--active {
       border: 2px solid blue;
+    }
+  }
+
+  &__delete-button {
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+
+      &:hover {
+      box-shadow: 0px 0px 5px 3px rgb(35, 36, 36);
     }
   }
 }

@@ -1,9 +1,12 @@
 .users {
-  padding: 40px;
+  padding: 40px 220px;
 
   &__title {
-    text-align: center;
-
     font-weight: 700;
   }
+}
+
+.users-list {
+  display: inline-flex;
+  flex-direction: column;
 }
