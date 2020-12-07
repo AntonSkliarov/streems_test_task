@@ -4,7 +4,7 @@ import { getPosts } from '../../api/posts';
 import { Post } from '../Post/Post';
 import './UserPosts.scss';
 
-export function UserPosts({ userId, setDisplayedPost }) {
+export function UserPosts({ userId, setDisplayedPost, postId }) {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {
@@ -29,6 +29,7 @@ export function UserPosts({ userId, setDisplayedPost }) {
                   post={post}
                   key={post.id}
                   setDisplayedPost={setDisplayedPost}
+                  postId={postId}
                 />
               ))}
             </ol>
@@ -41,6 +42,7 @@ export function UserPosts({ userId, setDisplayedPost }) {
 }
 
 UserPosts.propTypes = {
+  postId: PropTypes.number.isRequired,
   setDisplayedPost: PropTypes.func.isRequired,
   userId: PropTypes.number.isRequired,
 };

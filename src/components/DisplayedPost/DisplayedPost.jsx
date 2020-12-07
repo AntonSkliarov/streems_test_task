@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './DisplayedPost.scss';
 
 export function DisplayedPost({ displayedPost }) {
   return (
     <div className="displayed-post">
-      <h2>Post details</h2>
-      <img src={displayedPost.image} alt="Dispayed post" />
-      <p>
+      <h2 className="displayed-post__title">Post details</h2>
+      <img
+        className="displayed-post__iamge"
+        src={displayedPost.image}
+        alt="Dispayed post"
+      />
+      <p className="displayed-post__content">
         {displayedPost.content}
       </p>
     </div>
