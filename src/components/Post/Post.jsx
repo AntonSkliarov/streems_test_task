@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Post.scss';
 
 export function Post({ post }) {
   return (
-    <li>
-      <p>{post.content}</p>
+    <li className="post">
+      <button className="post__show-details-button" type="button">
+        Show post details
+      </button>
     </li>
   );
 }

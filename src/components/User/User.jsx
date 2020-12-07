@@ -39,6 +39,7 @@ export function User({ user, userDetailsId, setUserDetailsId }) {
                 <p>{`City: ${user.city}`}</p>
                 <p>{`Phone: ${user.phone}`}</p>
               </div>
+
               <UserPosts userId={Number(user.id)} />
             </>
           )}
