@@ -4,7 +4,7 @@ import { getPosts } from '../../api/posts';
 import { Post } from '../Post/Post';
 import './UserPosts.scss';
 
-export function UserPosts({ userId }) {
+export function UserPosts({ userId, setDisplayedPost }) {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {
@@ -23,9 +23,13 @@ export function UserPosts({ userId }) {
         ? (
           <>
             <h2>User Posts</h2>
-            <ol>
+            <ol className="user-posts__list">
               {userPosts.map(post => (
-                <Post post={post} key={post.id} />
+                <Post
+                  post={post}
+                  key={post.id}
+                  setDisplayedPost={setDisplayedPost}
+                />
               ))}
             </ol>
           </>
@@ -37,5 +41,6 @@ export function UserPosts({ userId }) {
 }
 
 UserPosts.propTypes = {
+  setDisplayedPost: PropTypes.func.isRequired,
   userId: PropTypes.number.isRequired,
 };

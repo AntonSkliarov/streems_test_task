@@ -1,4 +1,7 @@
 .post {
+  display: flex;
+  justify-content: space-between;
+
   &__show-details-button {
     margin-bottom: 10px;
     cursor: pointer;
