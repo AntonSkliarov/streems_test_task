@@ -1,21 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './User.scss';
-import { getPosts } from '../../api/posts';
+// import { getPosts } from '../../api/posts';
+import { UserPosts } from '../UserPosts';
 
 export function User({ user }) {
-  const [userPosts, setUserPosts] = useState([]);
-
-  const showUserPosts = useCallback((userId) => {
-    async function fetchData() {
-      const requestedPosts = await getPosts(userId);
-
-      setUserPosts(requestedPosts);
-    }
-
-    fetchData();
-  }, []);
-
   return (
     <div className="userCard" key={user.id}>
       <li className="userItem">
@@ -30,18 +19,7 @@ export function User({ user }) {
           <p>{`City: ${user.city}`}</p>
           <p>{`Phone: ${user.phone}`}</p>
         </div>
-        <div className="userPosts">
-          <button type="button" onClick={() => showUserPosts(user.id)}>
-            Show user posts
-          </button>
-          <ul>
-            {userPosts.map(post => (
-              <li>
-                <p>{post.content}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <UserPosts userId={Number(user.id)} />
       </li>
     </div>
   );
