@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { User } from '../User';
+import './UsersList.scss';
 
 export function UsersList({ users }) {
   return (

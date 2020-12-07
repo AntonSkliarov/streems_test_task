@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers } from './api/users';
 import './App.scss';
+import './reset.scss';
 import { UsersList } from './components/UsersList';
 
 export function App() {
