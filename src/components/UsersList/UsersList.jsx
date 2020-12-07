@@ -7,16 +7,19 @@ export function UsersList({ users }) {
   const [userDetailsId, setUserDetailsId] = useState(0);
 
   return (
-    <ul className="users-list">
-      {users.map(user => (
-        <User
-          user={user}
-          key={user.id}
-          userDetailsId={userDetailsId}
-          setUserDetailsId={setUserDetailsId}
-        />
-      ))}
-    </ul>
+    <div className="users">
+      <h1 className="users__title">Users List</h1>
+      <ul className="users-list">
+        {users.map(user => (
+          <User
+            user={user}
+            key={user.id}
+            userDetailsId={userDetailsId}
+            setUserDetailsId={setUserDetailsId}
+          />
+        ))}
+      </ul>
+    </div>
   );
 }
 

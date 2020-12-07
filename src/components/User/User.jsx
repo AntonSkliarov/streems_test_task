@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './User.scss';
 import { UserPosts } from '../UserPosts';
+import { DisplayedPost } from '../DisplayedPost/DisplayedPost';
 
 export function User({ user, userDetailsId, setUserDetailsId }) {
   const [displayedPost, setDisplayedPost] = useState({});
@@ -24,7 +25,7 @@ export function User({ user, userDetailsId, setUserDetailsId }) {
                       src={user.avatar}
                       alt="User avatar"
                     />
-                    <p>{`Name: ${user.name}`}</p>
+                    <p className="user__preview-name">{user.name}</p>
                   </div>
                 </button>
               </div>
@@ -37,10 +38,25 @@ export function User({ user, userDetailsId, setUserDetailsId }) {
                     src={user.avatar}
                     alt="User avatar"
                   />
-                  <p>{`Name: ${user.name}`}</p>
-                  <p>{`Role: ${user.role}`}</p>
-                  <p>{`City: ${user.city}`}</p>
-                  <p>{`Phone: ${user.phone}`}</p>
+                  <p>
+                    <span className="user__details-name">Name: </span>
+                    {user.name}
+                  </p>
+
+                  <p>
+                    <span className="user__details-role">Role: </span>
+                    {user.role}
+                  </p>
+
+                  <p>
+                    <span className="user__details-city">City: </span>
+                    {user.city}
+                  </p>
+
+                  <p>
+                    <span className="user__details-phone">Phone: </span>
+                    {user.phone}
+                  </p>
                 </div>
 
                 <UserPosts
@@ -55,23 +71,8 @@ export function User({ user, userDetailsId, setUserDetailsId }) {
       </div>
 
       {displayedPost.userId === userDetailsId && (
-        <div className="user__displayed-post">
-          <h2>Post details</h2>
-          <img src={displayedPost.image} alt="Dispayed post" />
-          <p>
-            {displayedPost.content}
-          </p>
-        </div>
+        <DisplayedPost displayedPost={displayedPost} />
       )}
-      {/* {!!Object.keys(displayedPost).length && (
-        <div className="user__displayed-post">
-          <h2>Post details</h2>
-          <img src={displayedPost.image} alt="Dispayed post" />
-          <p>
-            {displayedPost.content}
-          </p>
-        </div>
-      )} */}
     </>
   );
 }

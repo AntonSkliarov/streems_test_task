@@ -4,9 +4,10 @@
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-  background-color: chocolate;
+  background-color:#618685;
 
   &__details-button{
+    width: 170px;
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -21,7 +22,12 @@
   &__preview-avatar {
     height: 100px;
     width: 100px;
+    margin: 0 auto 10px;
     border-radius: 10px;
+  }
+
+  &__preview-name {
+    font-weight: 700;
   }
 
   &__item {
@@ -31,5 +37,12 @@
   &__avatar {
     margin-bottom: 10px;
     border-radius: 10px;
+  }
+
+  &__details-name,
+  &__details-role,
+  &__details-city,
+  &__details-phone {
+    font-weight: 700;
   }
 }

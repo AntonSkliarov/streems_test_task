@@ -2,6 +2,14 @@
   display: flex;
   justify-content: space-between;
 
+  &__content {
+    align-self: center;
+
+    margin-right: 50px;
+
+    font-size: 16px;
+  }
+
   &__show-details-button {
     margin-bottom: 10px;
     cursor: pointer;

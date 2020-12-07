@@ -5,7 +5,9 @@ import './Post.scss';
 export function Post({ post, setDisplayedPost }) {
   return (
     <li className="post">
-      <p>{post.content}</p>
+      <p className="post__content">
+        {post.content}
+      </p>
       <button
         className="post__show-details-button"
         type="button"
